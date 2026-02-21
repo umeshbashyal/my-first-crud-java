@@ -82,6 +82,7 @@ If Maven is installed and available in PATH:
 
 ```bash
 mvn spring-boot:run
+if you want to close the server just press ctrl+c .
 ```
 
 ## URLs
