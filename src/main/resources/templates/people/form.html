@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Person Form</title>
+	<style>
+		body { font-family: Arial, sans-serif; margin: 24px; }
+		.field { margin-bottom: 12px; }
+		label { display:block; margin-bottom: 6px; }
+		input { width: 100%; max-width: 480px; padding: 10px; }
+		.error { color: #b00020; margin-top: 6px; }
+		.btn { padding: 8px 12px; border: 1px solid #333; background: #fff; cursor: pointer; text-decoration:none; color:#000; }
+		.row { display:flex; gap: 10px; margin-top: 16px; }
+	</style>
+</head>
+<body>
+	<h2 th:text="${person.id} == null ? 'Create Person' : 'Edit Person'"></h2>
+
+	<form th:action="${person.id} == null ? @{/people} : @{/people/{id}(id=${person.id})}" method="post" th:object="${person}">
+		<div class="field">
+			<label for="name">Name</label>
+			<input id="name" type="text" th:field="*{name}"/>
+			<div class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+		</div>
+
+		<div class="field">
+			<label for="email">Email</label>
+			<input id="email" type="text" th:field="*{email}"/>
+			<div class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+		</div>
+
+		<div class="row">
+			<button class="btn" type="submit">Save</button>
+			<a class="btn" th:href="@{/people}">Back</a>
+		</div>
+	</form>
+</body>
+</html>

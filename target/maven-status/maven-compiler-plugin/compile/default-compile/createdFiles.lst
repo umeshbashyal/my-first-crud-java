@@ -1,0 +1,7 @@
+com\example\mysqlconection\controller\PersonRestController.class
+com\example\mysqlconection\controller\HomeController.class
+com\example\mysqlconection\service\PersonService.class
+com\example\mysqlconection\controller\PersonWebController.class
+com\example\mysqlconection\model\Person.class
+com\example\mysqlconection\MysqlconectionApplication.class
+com\example\mysqlconection\repository\PersonRepository.class
