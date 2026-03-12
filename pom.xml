@@ -13,6 +13,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>mysqlconection</artifactId>
+         
     <version>0.0.1-SNAPSHOT</version>
     <name>mysqlconection</name>
     <description>Simple CRUD with MySQL + Frontend</description>
